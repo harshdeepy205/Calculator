@@ -1,74 +1,131 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="box">
-      <center><h1>Calculator</h1></center>
-      <form action="#" name="form">
-        <div class="result">
-          <input type="text" onfocus="this.value=''" id="myInput" name="display" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Calculator</title>
+</head>
+
+<body>
+  <div class="box">
+    <center>
+      <h1>Calculator</h1>
+    </center>
+    <form action="#" name="form">
+      <div class="result">
+        <input type="text" onfocus="this.value=''" id="myInput" name="display" />
+      </div>
+      <div class="buttons">
+        <div class="row">
+          <input type="button" value="sin" name="vsin" onclick="sin()" />
+          <input type="button" value="cos" name="vcos" onclick="cos()" />
+          <input type="button" value="tan" name="vtan" onclick="tan()" />
+          <input type="button" value="C" name="clear" onclick="document.getElementById('myInput').value = ''"
+            onclick="clear()" />
         </div>
-        <div class="buttons">
-          
-          <div class="row">
-            <input type="button" value="7" name="v7" onclick="val(v7.value)"/>
-            <input type="button" value="8" name="v8" onclick="val(v8.value)"/>
-            <input type="button" value="9" name="v9" onclick="val(v9.value)"/>
-            <input type="button" value="/" name="divide" onclick="val(divide.value)"/>
-          </div>
-
-          <div class="row">
-            <input type="button" value="4" name="v4" onclick="val(v4.value)"/>
-            <input type="button" value="5" name="v5" onclick="val(v5.value)"/>
-            <input type="button" value="6" name="v6" onclick="val(v6.value)"/>
-            <input type="button" value="-" name="sub" onclick="val(sub.value)"/>
-          </div>
-
-          <div class="row">
-            <input type="button" value="1" name="v1" onclick="val(v1.value)"/>
-            <input type="button" value="2" name="v2" onclick="val(v2.value)"/>
-            <input type="button" value="3" name="v3" onclick="val(v3.value)"/>
-            <input type="button" value="+" name="add" onclick="val(add.value)"/>
-          </div>
-
-          <div class="row">
-            <input type="button" value="." name="vdot" onclick="val(vdot.value)"/>
-            <input type="button" value="0" name="v0" onclick="val(v0.value)"/>
-            <input type="button" value="*" name="multi" onclick="val(multi.value)"/>
-            <input type="button" value="=" name="veql" onclick="calculate()"/>
-          </div>
-          <div class="row">
-            <input type="button" value="C" name="clear" onclick="document.getElementById('myInput').value = '0'" onclick="clear()"/>
-          </div>
+        <div class="row">
+          <button type="button" value="x^2" onclick="square()">x<sup>2</sup></button>
+          <button type="button" value="x^3" onclick="qubbed()">x<sup>3</sup></button>
+          <button type="button" value="sqrt2" onclick="sqrt2()">&radic;</button>
+          <button type="button" value="sqrt3" onclick="sqrt3()">&#8731;</button>
         </div>
+
+        <div class="row">
+          <input type="button" value=" " name="vob" onclick="val(vob.value)" />
+          <input type="button" value="." name="vcb" onclick="val(vcb.value)" />
+          <input type="button" value="*" name="multi" onclick="val(multi.value)" />
+          <input type="button" value="AC" name="backs" onclick="backspace()" />
         </div>
-      </form>
-    </div>
 
-    <script>
-      function val(result){
-        form.display.value = form.display.value + result;
-        }
-        function calculate(){
-          if(form.display.value == ""){
-            alert("Please Enter the numbers")
-          }
-          else{
-            form.display.value = eval(form.display.value);
-          }
+        <div class="row">
+          <input type="button" value="7" name="v7" onclick="val(v7.value)" />
+          <input type="button" value="8" name="v8" onclick="val(v8.value)" />
+          <input type="button" value="9" name="v9" onclick="val(v9.value)" />
+          <input type="button" value="/" name="divide" onclick="val(divide.value)" />
+        </div>
 
-        }
-        var btn = form.veql;
-        btn.addEventListener('dblclick', function(){
-          form.display.value="";
-        })
-          // function clear(){
-          //   document.getElementById("form").reset();
-          // }
-    </script>
-  </body>
+        <div class="row">
+          <input type="button" value="4" name="v4" onclick="val(v4.value)" />
+          <input type="button" value="5" name="v5" onclick="val(v5.value)" />
+          <input type="button" value="6" name="v6" onclick="val(v6.value)" />
+          <input type="button" value="-" name="sub" onclick="val(sub.value)" />
+        </div>
+
+        <div class="row">
+          <input type="button" value="1" name="v1" onclick="val(v1.value)" />
+          <input type="button" value="2" name="v2" onclick="val(v2.value)" />
+          <input type="button" value="3" name="v3" onclick="val(v3.value)" />
+          <input type="button" value="+" name="add" onclick="val(add.value)" />
+        </div>
+
+        <div class="row">
+          <!-- <input type="button" value="." name="vdot" onclick="val(vdot.value)" /> -->
+          <input type="button" value="0" name="v0" onclick="val(v0.value)"  style="width: 160px;" />
+          <!-- <input type="button" value="*" name="multi" onclick="val(multi.value)" /> -->
+          <input type="button" value="=" name="veql" onclick="calculate()" style="width: 160px;" />
+        </div>
+
+      </div>
+  </div>
+  </form>
+  </div>
+
+  <script>
+    function val(result) {
+      form.display.value = form.display.value + result;
+    }
+
+    function calculate() {
+      if (form.display.value == "") {
+        alert("Please Enter the numbers")
+      } else {
+        form.display.value = eval(form.display.value);
+      }
+
+    }
+    var btn = form.veql;
+    btn.addEventListener('dblclick', function () {
+      form.display.value = "";
+    })
+    // function clear(){
+    //   document.getElementById("form").reset();
+    // }
+
+    function sin(){
+      document.form.display.value= Math.sin(document.form.display.value);     
+    }
+
+    function cos(){
+      document.form.display.value=Math.cos(document.form.display.value);
+    }
+
+    function tan(){
+      document.form.display.value= Math.tan(documnet.form.display.value);
+    }
+
+    function square(){
+      document.form.display.value =Math.pow(document.form.display.value,2);
+    }
+
+    function qubbed(){
+      document.form.display.value =Math.pow(document.form.display.value,3);
+    }
+
+    function sqrt2(){
+      document.form.display.value =Math.pow(document.form.display.value,1/2);
+    }
+
+    function sqrt3(){
+      document.form.display.value =Math.pow(document.form.display.result.value,1/3);
+    }
+
+    function backspace(){
+      var a= document.from.display.value;
+      document.from.display.value = a.substr(0, a.length-1);
+    }
+    
+  </script>
+</body>
+
 </html>
