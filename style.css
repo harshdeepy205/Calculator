@@ -13,17 +13,19 @@ body {
   height: 100%;
   display: grid;
   place-items: center;
-  background: cyan;
+  background: black;
 }
 
 .box {
   align-items: center;
   width: 400px;
   /* height: 500px; */
-  background-color: #dde1e7;
+  /* background-color: #141414; */
+  background: linear-gradient(57deg,
+      #833ab4, #fd1d1d, #fcb045);
   padding: 40px 30px;
   border-radius: 10px;
-  box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
+  box-shadow: -3px -3px 1px #ffffff73, 2px 2px 3px rgba(94, 104, 121, 0.288);
 }
 
 .box h1 {
@@ -70,43 +72,47 @@ form .buttons {
 }
 
 .buttons input[type="button"] {
-  height: 56px;
+  height: 63px;
   width: 74px;
   font-size: 23px;
   margin: 4px;
   border: none;
   outline: none;
   background-color: #dde1e7;
-  padding: 40px 30px;
+  padding: 31px 30px;
   border-radius: 10px;
   color: black;
-  box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
+  /* box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288); */
 }
 
 .buttons input[type="button"]:focus {
   color: #3498db;
   transform: scale(0.9);
-  box-shadow: inset -3px -3px 7px #ffffff73,
+  box-shadow: inset -3px -3px 4px #ffffff73,
     inset 2px 2px 5px rgba(94, 104, 121, 0.288);
 }
 
 button {
-  height: 56px;
+  height: 63px;
   width: 74px;
   font-size: 23px;
   margin: 4px;
   border: none;
   outline: none;
   background-color: #dde1e7;
-  padding: 40px 30px;
+  padding: 31px 30px;
   border-radius: 10px;
   color: black;
-  box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
+  /* box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288); */
 }
 
 button:focus {
   color: #3498db;
   transform: scale(0.9);
-  box-shadow: inset -3px -3px 7px #ffffff73,
+  box-shadow: inset -3px -3px 4px #ffffff73,
     inset 2px 2px 5px rgba(94, 104, 121, 0.288);
+}
+
+.buttons input[value] {
+  margin-bottom: 2px;
 }

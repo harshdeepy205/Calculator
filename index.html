@@ -32,10 +32,10 @@
         </div>
 
         <div class="row">
-          <input type="button" value=" " name="vob" onclick="val(vob.value)" />
           <input type="button" value="." name="vcb" onclick="val(vcb.value)" />
           <input type="button" value="*" name="multi" onclick="val(multi.value)" />
-          <input type="button" value="AC" name="backs" onclick="backspace()" />
+          <button type="button" value="AC" onclick="backspace()"  style="width: 160px;">AC</button>
+          <!-- <input type="button" value="AC" name="backs" onclick="backspace()" style="width: 160px;" /> -->
         </div>
 
         <div class="row">
@@ -101,7 +101,7 @@
     }
 
     function tan(){
-      document.form.display.value= Math.tan(documnet.form.display.value);
+      document.form.display.value= Math.tan(document.form.display.value);
     }
 
     function square(){
