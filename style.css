@@ -116,3 +116,15 @@ button:focus {
 .buttons input[value] {
   margin-bottom: 2px;
 }
+
+@media(max-width:405px) {
+  .box {
+    width: 104%;
+  }
+}
+
+@media(max-width:405px) {
+  .box {
+    width: 116%;
+  }
+}
